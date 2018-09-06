@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>프로야구 매직넘버 계산기</title>
+
+	<style type="text/css">
+		#output img{width: 100%;}
+	</style>
+
+</head>
+<body>
+	
+	<div id = "input" style="margin: auto; width: 400px;">
+	A위팀 
+	<input type="text" placeholder="A위팀 승리" size="10" id="aW">
+	<input type="text" placeholder="A위팀 무승부" size="10" id="aD">
+	<input type="text" placeholder="A위팀 패배" size="10" id="aL">
+	
+	<br>
+	
+	B위팀 
+	<input type="text" placeholder="B위팀 승리" size="10" id="bW">
+	<input type="text" placeholder="B위팀 무승부" size="10" id="bD">
+	<input type="text" placeholder="B위팀 패배" size="10" id="bL">
+	
+	<br>
+
+	<button id="but" style="margin: auto; width: 400px;">매직넘버계산</button>
+	</div>
+
+	<div id = "output" style="margin: auto; width: 400px; background: yellow; color: red; text-align: center; line-height: 50px; font-size:1em;"><img src = "./img/baseball.jpg"> 프로야구 매직넘버를 알려드립니다.</div>
+
+	<script type="text/javascript">
+		
+		but.onclick = function () {
+			
+			var magicNum = (145-aW.value-bD.value-bL.value);
+			var finalOutput = "프로야구 A위팀이 자력으로 우승을 확정 짓게 되기까지 필요한 승수는 " + magicNum + "승 입니다.";
+
+			output.innerHTML = finalOutput;
+		}
+
+	</script>
+
+	<br>
+
+	<div id = "exp" style="margin: auto; width: 400px;">
+	* 매직넘버란 스포츠 리그에서 우승하거나, 다른팀을 앞서거나 포스트시즌 진출이나 승격, 잔류등 특정 자격에 대하여 앞으로 최소 몇경기만 이기면 어느팀을 상대로 이기든지 목표를 달성할 수 있는지를 나타내는 숫자다.
+	</div>
+
+	<br>
+
+	<div style="margin: auto; width: 150px;">
+	<script type="text/javascript">
+    function CheckSelect(){
+        var ctrlSelect = document.getElementById("lstFavorite");
+        if( ctrlSelect.selectedIndex == 0){
+            alert("선택사항을 선택하시오.");
+            ctrlSelect.focus();
+        }else{
+            window.alert("당신의 선택사항 : " + ctrlSelect.value );
+        }
+    }
+  </script>
+
+   <select id="lstFavorite">
+        <option value="">- 선택 -</option>
+        <option value="매직넘버">매직넘버</option>
+        <option value="트레직넘버">트레직넘버</option>
+    </select>
+ 
+    <input type="button" value="확인" onclick="CheckSelect();"/>
+    </div>
+</body>
+
+</html>
